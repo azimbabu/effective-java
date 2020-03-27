@@ -7,17 +7,17 @@ import java.util.TreeMap;
 public class Frequency {
 
   public static void main(String[] args) {
-      Map<String, Integer> frequencyTable = new TreeMap<>();
+    Map<String, Integer> frequencyTable = new TreeMap<>();
 
-      for (String arg : args) {
-          frequencyTable.merge(arg, 1, (count, increment) -> count + increment);
-      }
-      System.out.println(frequencyTable);
+    for (String arg : args) {
+      frequencyTable.merge(arg, 1, (count, increment) -> count + increment);
+    }
+    System.out.println(frequencyTable);
 
-      frequencyTable.clear();
-      for (String arg : args) {
-          frequencyTable.merge(arg, 1, Integer::sum);
-      }
-      System.out.println(frequencyTable);
+    frequencyTable.clear();
+    for (String arg : args) {
+      frequencyTable.merge(arg, 1, Integer::sum);
+    }
+    System.out.println(frequencyTable);
   }
 }

@@ -36,7 +36,7 @@ public class SubLists {
     List<Character> list = Arrays.asList('A', 'B', 'C');
     System.out.println("Sublist1");
     SubLists.of(list).forEach(System.out::println);
-      System.out.println("Sublist2");
-      SubLists.of2(list).forEach(System.out::println);
+    System.out.println("Sublist2");
+    SubLists.of2(list).forEach(System.out::println);
   }
 }
