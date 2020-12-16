@@ -25,7 +25,8 @@ public class StreamAnagrams {
                               (sb, c) -> sb.append((char) c),
                               StringBuilder::append)
                           .toString()))
-          .values().stream()
+          .values()
+          .stream()
           .filter(group -> group.size() >= minGroupSize)
           .map(group -> group.size() + ": " + group)
           .forEach(System.out::println);
