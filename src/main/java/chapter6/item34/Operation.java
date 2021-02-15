@@ -2,8 +2,9 @@ package chapter6.item34;
 
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toMap;
 
 // Enum type with constant-specific class bodies and data
 public enum Operation {
@@ -37,7 +38,7 @@ public enum Operation {
 
   // Implementing a fromString method on an enum type
   private static final Map<String, Operation> stringToEnum =
-      Stream.of(values()).collect(Collectors.toMap(Object::toString, operation -> operation));
+      Stream.of(values()).collect(toMap(Object::toString, operation -> operation));
   private final String symbol;
 
   Operation(String symbol) {

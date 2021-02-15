@@ -1,16 +1,13 @@
 package chapter8.item50;
 
-import java.io.IOException;
-import java.io.InvalidObjectException;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Date;
 
 public class Period implements Serializable {
   private static final long serialVersionUID = -1635741885515087279L;
 
-  private  Date start;
-  private  Date end;
+  private Date start;
+  private Date end;
 
   // Repaired constructor - makes defensive copies of parameters
   public Period(Date start, Date end) {
@@ -35,6 +32,4 @@ public class Period implements Serializable {
   public String toString() {
     return start + "-" + end;
   }
-
-
 }

@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 // Enum singleton - the preferred approach
 public enum Elvis {
-    INSTANCE;
+  INSTANCE;
 
-    private String[] favoriteSongs = {"Hound Dog", "Heartbreak Hotel"};
+  private String[] favoriteSongs = {"Hound Dog", "Heartbreak Hotel"};
 
-    public void printFavorites() {
-        System.out.println(Arrays.toString(favoriteSongs));
-    }
+  public void printFavorites() {
+    System.out.println(Arrays.toString(favoriteSongs));
+  }
 }

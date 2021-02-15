@@ -2,9 +2,14 @@ package chapter7.item46;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.Comparator.comparing;
 
 public class FrequencyTable {
   public static void main(String[] args) throws FileNotFoundException {
@@ -22,7 +27,7 @@ public class FrequencyTable {
     // Pipeline to get a top-ten list of words from a frequency table
     List<String> topTenWords =
         frequency.keySet().stream()
-            .sorted(Comparator.comparing(frequency::get).reversed())
+            .sorted(comparing(frequency::get).reversed())
             .limit(10)
             .collect(Collectors.toList());
 

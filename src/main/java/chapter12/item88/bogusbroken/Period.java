@@ -4,32 +4,32 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Period implements Serializable {
-    private static final long serialVersionUID = -8834472354839863792L;
+  private static final long serialVersionUID = -8834472354839863792L;
 
-    private Date start;
-    private  Date end;
+  private Date start;
+  private Date end;
 
-    // Repaired constructor - makes defensive copies of parameters
-    public Period(Date start, Date end) {
-        this.start = new Date(start.getTime());
-        this.end = new Date(end.getTime());
+  // Repaired constructor - makes defensive copies of parameters
+  public Period(Date start, Date end) {
+    this.start = new Date(start.getTime());
+    this.end = new Date(end.getTime());
 
-        if (this.start.compareTo(this.end) > 0) {
-            throw new IllegalArgumentException(this.start + " after " + this.end);
-        }
+    if (this.start.compareTo(this.end) > 0) {
+      throw new IllegalArgumentException(this.start + " after " + this.end);
     }
+  }
 
-    // Repaired accessors - make defensive copies of internal fields
-    public Date start() {
-        return new Date(start.getTime());
-    }
+  // Repaired accessors - make defensive copies of internal fields
+  public Date start() {
+    return new Date(start.getTime());
+  }
 
-    public Date end() {
-        return new Date(end.getTime());
-    }
+  public Date end() {
+    return new Date(end.getTime());
+  }
 
-    @Override
-    public String toString() {
-        return start + "-" + end;
-    }
+  @Override
+  public String toString() {
+    return start + "-" + end;
+  }
 }
